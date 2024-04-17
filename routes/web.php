@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ParentActivityController;
 use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,14 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => 'admin'], function () {
+    Route::resource('parent-activity', ParentActivityController::class)->names([
+        'view' => 'parent-activity.view',
+        'create' => 'parent-activity.create',
+        'store' => 'parent-activity.store',
+        'edit' => 'parent-activity.edit',
+        'update' => 'parent-activity.update',
+        'destroy' => 'parent-activity.destroy',
+        'show' => 'parent-activity.show'
+    ]);
+});

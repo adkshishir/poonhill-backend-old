@@ -154,7 +154,7 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => null,
+    'layout_fixed_sidebar' => true,
     'layout_fixed_navbar' => null,
     'layout_fixed_footer' => null,
     'layout_dark_mode' => null,
@@ -323,55 +323,26 @@ return [
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
+        ['header' => 'Admin'],
         [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
+            'text' => 'Parent Activities',
+            'url' => '#',
+            'icon' => 'fas fa-fw fa-folder',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url' => '#',
+                    'text' => 'View ',
+                    'url' => 'parent-activity',
+                    'icon' => 'fa fa-eye'
                 ],
                 [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
+                    'text' => 'Create ',
+                    'url' => 'parent-activity/create',
+                    'icon' => 'fa fa-plus'
                 ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-            ],
+            ]
+
         ],
-        ['header' => 'labels'],
+
         [
             'text' => 'important',
             'icon_color' => 'red',

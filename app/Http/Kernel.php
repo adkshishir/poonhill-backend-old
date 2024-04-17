@@ -43,6 +43,8 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\ThrottleRequests::class.':api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
+        // custom middleware for the user who were not authenticated in the admin panel
+        'admin' => [\App\Http\Middleware\RedirectIfNotAdmin::class,]
     ];
 
     /**
